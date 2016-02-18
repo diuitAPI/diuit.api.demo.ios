@@ -1,0 +1,423 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		584EEF1C1C0C9CBE0011C2D0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 584EEF1B1C0C9CBE0011C2D0 /* AppDelegate.swift */; };
+		584EEF1E1C0C9CBE0011C2D0 /* ChatroomListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 584EEF1D1C0C9CBE0011C2D0 /* ChatroomListVC.swift */; };
+		584EEF211C0C9CBE0011C2D0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 584EEF1F1C0C9CBE0011C2D0 /* Main.storyboard */; };
+		584EEF231C0C9CBE0011C2D0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 584EEF221C0C9CBE0011C2D0 /* Assets.xcassets */; };
+		584EEF301C0CA2B30011C2D0 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 584EEF2F1C0CA2B30011C2D0 /* Launch Screen.storyboard */; };
+		586C1E7F1C145A6B008C9303 /* ChatroomVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 586C1E7E1C145A6B008C9303 /* ChatroomVC.swift */; };
+		EB5DA2721C3354D600080BEF /* sampleFile1.pdf in Resources */ = {isa = PBXBuildFile; fileRef = EB5DA2711C3354D600080BEF /* sampleFile1.pdf */; };
+		EB5DA2741C33552100080BEF /* sampleFile2.pdf in Resources */ = {isa = PBXBuildFile; fileRef = EB5DA2731C33552100080BEF /* sampleFile2.pdf */; };
+		F3960617E606EB9AD1E7F7FC /* Pods_Diuit_API_Demo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 16BB068335E8F2A72C1276F1 /* Pods_Diuit_API_Demo.framework */; };
+		FA2705581C2BA332003F218D /* ChatroomSettingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2705571C2BA332003F218D /* ChatroomSettingVC.swift */; };
+		FA27055A1C2BAF40003F218D /* ChooserUserVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2705591C2BAF40003F218D /* ChooserUserVC.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		16BB068335E8F2A72C1276F1 /* Pods_Diuit_API_Demo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Diuit_API_Demo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		584EEF181C0C9CBE0011C2D0 /* Diuit API Demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Diuit API Demo.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		584EEF1B1C0C9CBE0011C2D0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		584EEF1D1C0C9CBE0011C2D0 /* ChatroomListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatroomListVC.swift; sourceTree = "<group>"; };
+		584EEF201C0C9CBE0011C2D0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		584EEF221C0C9CBE0011C2D0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		584EEF271C0C9CBE0011C2D0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		584EEF2F1C0CA2B30011C2D0 /* Launch Screen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
+		586C1E7E1C145A6B008C9303 /* ChatroomVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatroomVC.swift; sourceTree = "<group>"; };
+		C4FD962BFDB97424E9CB8B59 /* Pods-Diuit API Demo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Diuit API Demo.release.xcconfig"; path = "Pods/Target Support Files/Pods-Diuit API Demo/Pods-Diuit API Demo.release.xcconfig"; sourceTree = "<group>"; };
+		DC303B23D0F97F327A82002C /* Pods-Diuit API Demo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Diuit API Demo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Diuit API Demo/Pods-Diuit API Demo.debug.xcconfig"; sourceTree = "<group>"; };
+		EB5DA2711C3354D600080BEF /* sampleFile1.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = sampleFile1.pdf; sourceTree = "<group>"; };
+		EB5DA2731C33552100080BEF /* sampleFile2.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = sampleFile2.pdf; sourceTree = "<group>"; };
+		FA2705571C2BA332003F218D /* ChatroomSettingVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatroomSettingVC.swift; sourceTree = "<group>"; };
+		FA2705591C2BAF40003F218D /* ChooserUserVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChooserUserVC.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		584EEF151C0C9CBE0011C2D0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F3960617E606EB9AD1E7F7FC /* Pods_Diuit_API_Demo.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		206D21CAD5C1092EAA9327EB /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				DC303B23D0F97F327A82002C /* Pods-Diuit API Demo.debug.xcconfig */,
+				C4FD962BFDB97424E9CB8B59 /* Pods-Diuit API Demo.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		584EEF0F1C0C9CBE0011C2D0 = {
+			isa = PBXGroup;
+			children = (
+				584EEF1A1C0C9CBE0011C2D0 /* Diuit API Demo */,
+				584EEF191C0C9CBE0011C2D0 /* Products */,
+				206D21CAD5C1092EAA9327EB /* Pods */,
+				8851E699C16769BE3852F7D4 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		584EEF191C0C9CBE0011C2D0 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				584EEF181C0C9CBE0011C2D0 /* Diuit API Demo.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		584EEF1A1C0C9CBE0011C2D0 /* Diuit API Demo */ = {
+			isa = PBXGroup;
+			children = (
+				EB5DA2681C3341E700080BEF /* Resources */,
+				584EEF1B1C0C9CBE0011C2D0 /* AppDelegate.swift */,
+				586C1E7E1C145A6B008C9303 /* ChatroomVC.swift */,
+				584EEF1D1C0C9CBE0011C2D0 /* ChatroomListVC.swift */,
+				FA2705571C2BA332003F218D /* ChatroomSettingVC.swift */,
+				FA2705591C2BAF40003F218D /* ChooserUserVC.swift */,
+				584EEF271C0C9CBE0011C2D0 /* Info.plist */,
+			);
+			path = "Diuit API Demo";
+			sourceTree = "<group>";
+		};
+		8851E699C16769BE3852F7D4 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				16BB068335E8F2A72C1276F1 /* Pods_Diuit_API_Demo.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		EB5DA2681C3341E700080BEF /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				EB5DA2711C3354D600080BEF /* sampleFile1.pdf */,
+				EB5DA2731C33552100080BEF /* sampleFile2.pdf */,
+				584EEF1F1C0C9CBE0011C2D0 /* Main.storyboard */,
+				584EEF221C0C9CBE0011C2D0 /* Assets.xcassets */,
+				584EEF2F1C0CA2B30011C2D0 /* Launch Screen.storyboard */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		584EEF171C0C9CBE0011C2D0 /* Diuit API Demo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 584EEF2A1C0C9CBE0011C2D0 /* Build configuration list for PBXNativeTarget "Diuit API Demo" */;
+			buildPhases = (
+				696E0BAB3CDE14479E0382C4 /* Check Pods Manifest.lock */,
+				584EEF141C0C9CBE0011C2D0 /* Sources */,
+				584EEF151C0C9CBE0011C2D0 /* Frameworks */,
+				584EEF161C0C9CBE0011C2D0 /* Resources */,
+				3885960C8BCD28A1652D2AB6 /* Embed Pods Frameworks */,
+				3AB4A299911DDC4C4D6E541E /* Copy Pods Resources */,
+				FA076D5D1C2D353E004AED77 /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Diuit API Demo";
+			productName = "Diuit API Demo";
+			productReference = 584EEF181C0C9CBE0011C2D0 /* Diuit API Demo.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		584EEF101C0C9CBE0011C2D0 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0710;
+				LastUpgradeCheck = 0710;
+				ORGANIZATIONNAME = Diuit;
+				TargetAttributes = {
+					584EEF171C0C9CBE0011C2D0 = {
+						CreatedOnToolsVersion = 7.1.1;
+					};
+				};
+			};
+			buildConfigurationList = 584EEF131C0C9CBE0011C2D0 /* Build configuration list for PBXProject "Diuit API Demo" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 584EEF0F1C0C9CBE0011C2D0;
+			productRefGroup = 584EEF191C0C9CBE0011C2D0 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				584EEF171C0C9CBE0011C2D0 /* Diuit API Demo */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		584EEF161C0C9CBE0011C2D0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				584EEF301C0CA2B30011C2D0 /* Launch Screen.storyboard in Resources */,
+				EB5DA2721C3354D600080BEF /* sampleFile1.pdf in Resources */,
+				EB5DA2741C33552100080BEF /* sampleFile2.pdf in Resources */,
+				584EEF231C0C9CBE0011C2D0 /* Assets.xcassets in Resources */,
+				584EEF211C0C9CBE0011C2D0 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		3885960C8BCD28A1652D2AB6 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Diuit API Demo/Pods-Diuit API Demo-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		3AB4A299911DDC4C4D6E541E /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Diuit API Demo/Pods-Diuit API Demo-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		696E0BAB3CDE14479E0382C4 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		FA076D5D1C2D353E004AED77 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Fabric/run\" 06d90a26aad6491a3843c608cb510b8e6c00e715 e74b25259a01367d5080d54a27f84df36cdc78b102152dcdba470e533c69c853";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		584EEF141C0C9CBE0011C2D0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				586C1E7F1C145A6B008C9303 /* ChatroomVC.swift in Sources */,
+				584EEF1E1C0C9CBE0011C2D0 /* ChatroomListVC.swift in Sources */,
+				584EEF1C1C0C9CBE0011C2D0 /* AppDelegate.swift in Sources */,
+				FA2705581C2BA332003F218D /* ChatroomSettingVC.swift in Sources */,
+				FA27055A1C2BAF40003F218D /* ChooserUserVC.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		584EEF1F1C0C9CBE0011C2D0 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				584EEF201C0C9CBE0011C2D0 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		584EEF281C0C9CBE0011C2D0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = "$(inherited)";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		584EEF291C0C9CBE0011C2D0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = "$(inherited)";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		584EEF2B1C0C9CBE0011C2D0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = DC303B23D0F97F327A82002C /* Pods-Diuit API Demo.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = "$(inherited)";
+				ENABLE_BITCODE = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(PODS_ROOT)/DUMessaging\"",
+					"\"${PODS_ROOT}/Crashlytics/iOS\"",
+					"\"${PODS_ROOT}/Fabric/iOS\"",
+				);
+				INFOPLIST_FILE = "Diuit API Demo/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.diuit.Diuit-API-Demo";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+			};
+			name = Debug;
+		};
+		584EEF2C1C0C9CBE0011C2D0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C4FD962BFDB97424E9CB8B59 /* Pods-Diuit API Demo.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = "$(inherited)";
+				ENABLE_BITCODE = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(PODS_ROOT)/DUMessaging\"",
+					"\"${PODS_ROOT}/Crashlytics/iOS\"",
+					"\"${PODS_ROOT}/Fabric/iOS\"",
+				);
+				INFOPLIST_FILE = "Diuit API Demo/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.diuit.Diuit-API-Demo";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		584EEF131C0C9CBE0011C2D0 /* Build configuration list for PBXProject "Diuit API Demo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				584EEF281C0C9CBE0011C2D0 /* Debug */,
+				584EEF291C0C9CBE0011C2D0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		584EEF2A1C0C9CBE0011C2D0 /* Build configuration list for PBXNativeTarget "Diuit API Demo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				584EEF2B1C0C9CBE0011C2D0 /* Debug */,
+				584EEF2C1C0C9CBE0011C2D0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 584EEF101C0C9CBE0011C2D0 /* Project object */;
+}
