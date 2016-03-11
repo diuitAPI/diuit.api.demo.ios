@@ -22,8 +22,12 @@ class ChatroomListVC: UIViewController {
         NSNotificationCenter.defaultCenter().addObserverForName("messageReceived", object: nil, queue: NSOperationQueue.mainQueue()) { notif in
             let message = notif.userInfo!["message"] as! DUMessage
             NSLog("Got new message #\(message.id):\n\(message.data)")
-            DUMessaging.listChatroomsOnCompletion() { code, chats in
-                NSLog("Result2 \(code): \(chats?.count)")
+            DUMessaging.listChatroomsOnCompletion() { error, chats in
+                if error != nil {
+                    NSLog("list chat room errored:\(error!.localizedDescription)")
+                    return
+                }
+                NSLog("There are \(chats?.count) chatrooms")
                 self.chats = (chats as! [DUChat]?)!
                 self.tableView.reloadData();
             }
@@ -31,18 +35,20 @@ class ChatroomListVC: UIViewController {
     }
     func loginWithAuthToken(token: String) {
         
-        DUMessaging.loginWithAuthToken(token) { code, result in
-            NSLog("Login Result \(code): \(result)")
-            if code != 200 {
-                let alert = UIAlertController(title: "Error", message: "Failed to login", preferredStyle: .Alert);
+        DUMessaging.loginWithAuthToken(token) { error, result in
+            if error != nil {
+                let alert = UIAlertController(title: "Error", message: "Failed to login:\(error!.localizedDescription)", preferredStyle: .Alert);
                 alert.addAction(UIAlertAction(title: "Dismiss", style: .Default, handler: nil))
                 self.presentViewController(alert, animated: true, completion: nil);
                 return
             }
             self.registerMessageObserver()
 
-            DUMessaging.listChatroomsOnCompletion() { code, chats in
-                NSLog("Result2 \(code): \(chats)")
+            DUMessaging.listChatroomsOnCompletion() { error, chats in
+                if error != nil {
+                    NSLog("list chat room errored:\(error!.localizedDescription)")
+                    return
+                }
                 self.chats = (chats as! [DUChat]?)!
                 self.tableView.reloadData();
             }
@@ -104,8 +110,11 @@ class ChatroomListVC: UIViewController {
         super.viewWillAppear(animated)
         if DUMessaging.currentUser != nil {
             self.registerMessageObserver()
-            DUMessaging.listChatroomsOnCompletion() { code, chats in
-                NSLog("Result2 \(code): \(chats)")
+            DUMessaging.listChatroomsOnCompletion() { error, chats in
+                if error != nil {
+                    NSLog("list chat room errored:\(error!.localizedDescription)")
+                    return
+                }
                 self.chats = (chats as! [DUChat]?)!
                 self.tableView.reloadData();
             }

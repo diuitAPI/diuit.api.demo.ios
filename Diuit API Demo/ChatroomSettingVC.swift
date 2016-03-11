@@ -35,8 +35,8 @@ class ChatroomSettingVC: UIViewController {
 
     @IBAction func save() {
         if self.roomNameText.text != "" {
-            self.chat.updateMeta(["name": self.roomNameText.text!]) { code, chat in
-                if code == 200 {
+            self.chat.updateMeta(["name": self.roomNameText.text!]) { erro, chat in
+                if erro == nil {
                     self.navigationController?.popViewControllerAnimated(true)
                 }
             }
@@ -47,8 +47,8 @@ class ChatroomSettingVC: UIViewController {
     }
 
     @IBAction func leaveRoom() {
-        self.chat.leaveOnCompletion() { code, message in
-            if code == 200 {
+        self.chat.leaveOnCompletion() { error, result in
+            if error == nil {
                 let vcs = self.navigationController?.viewControllers
                 for vc in vcs! {
                     if vc.isKindOfClass(ChatroomListVC) {
@@ -78,9 +78,9 @@ extension ChatroomSettingVC: UITableViewDataSource {
         if (((sender.superview?.superview?.isKindOfClass(UITableViewCell))) != nil) {
             let indexPath = self.tableView.indexPathForCell(sender.superview?.superview as! UITableViewCell)
             NSLog("kick \(self.serials[indexPath!.row])")
-            self.chat.kickUser(self.serials[indexPath!.row]) {code, message in
-                if code != 200 {
-                    NSLog("error kicking due to : \(message)")
+            self.chat.kickUser(self.serials[indexPath!.row]) {error, result in
+                if error != nil {
+                    NSLog("error kicking due to : \(error!.localizedDescription)")
                 } else {
                     self.serials.removeAtIndex(indexPath!.row)
                     self.tableView.reloadData()

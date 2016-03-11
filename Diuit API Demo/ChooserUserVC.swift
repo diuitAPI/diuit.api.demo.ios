@@ -16,17 +16,11 @@ class ChooserUserVC: UIViewController {
     
     private var doJoinRoom: Bool = false
     private let userDict: NSDictionary = [
-        //"1234":"User1",
-        //"2345":"User2",
         "demouser1":"demouser1",
         "demouser2":"demouser2",
         "demouser3":"demouser3"]
-        //"diuitapitestuser0":"BEN",
-        //"diuitapitestuser1":"CHRIS",
-        //"diuitapitestuser2":"MIRU",
-        //"diuitapitestuser3":"POFAT",
-        //"diuitapitestuser4":"MOMO"]
     private var filteredDict: NSMutableDictionary?
+    /* XXX: 10 is a demo chat id, you should replace with your id */
     private let roomDict: [String:Int] = ["join me":10]
     private var selected: [String] = []
 
@@ -42,22 +36,23 @@ class ChooserUserVC: UIViewController {
     
     @IBAction func join() {
         if self.doJoinRoom {
+            /* XXX: 10 is a demo chat id, you should replace with your id */
             let chatId:Int = 10
-            DUMessaging.joinChatroomWithId(chatId) {code, chat in
-                if code == 200 {
-                    self.navigationController?.popViewControllerAnimated(true)
-                } else {
-                    NSLog("error joining chat: \(chat)")
+            DUMessaging.joinChatroomWithId(chatId) {error, chat in
+                if error != nil {
+                    NSLog("error joining chat: \(error!.localizedDescription)")
+                    return
                 }
+                self.navigationController?.popViewControllerAnimated(true)
             }
         } else {
             if selected.count != 0 {
-                DUMessaging.createChatroomWith(selected) {code, chat in
-                    if code == 200 {
-                        self.navigationController?.popViewControllerAnimated(true)
-                    } else {
-                        NSLog("error creating chat: \(chat)")
+                DUMessaging.createChatroomWith(selected) {error, chat in
+                    if error != nil {
+                        NSLog("error creating chat: \(error!.localizedDescription)")
+                        return
                     }
+                    self.navigationController?.popViewControllerAnimated(true)
                 }
             }
         }

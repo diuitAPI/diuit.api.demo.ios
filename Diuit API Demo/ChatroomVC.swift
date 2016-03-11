@@ -22,15 +22,11 @@ class ChatroomVC: UIViewController, UIImagePickerControllerDelegate, UINavigatio
     var chat: DUChat!
     // MARK: private helper
     func JSONParseDictionary(string: String) -> [String: AnyObject]{
-        
-        
         if let data = string.dataUsingEncoding(NSUTF8StringEncoding){
-            
             do{
                 if let dictionary = try NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions.MutableContainers) as? [String: AnyObject]{
                     
                     return dictionary
-                    
                 }
             }catch {
                 
@@ -47,12 +43,12 @@ class ChatroomVC: UIViewController, UIImagePickerControllerDelegate, UINavigatio
 
         if textfield.text == "send file1" {
             let path = NSBundle.mainBundle().pathForResource("sampleFile1", ofType: "pdf")
-            self.chat.sendFileWithPath(path!, meta: ["name":"sampleFile1.pdf"]) { code, message in
-                if code != 200 {
-                    let alert = UIAlertController(title: "Info", message: message as? String, preferredStyle: UIAlertControllerStyle.Alert)
+            self.chat.sendFileWithPath(path!, meta: ["name":"sampleFile1.pdf"]) { error, message in
+                if error != nil {
+                    let alert = UIAlertController(title: "Info", message: error!.localizedDescription as? String, preferredStyle: UIAlertControllerStyle.Alert)
                     self.presentViewController(alert, animated: true, completion: nil)
                 } else {
-                    NSLog("file message 1 sent")
+                    NSLog("file message #\(message.id) sent")
                 }
             }
             textfield.text? = ""
@@ -61,24 +57,24 @@ class ChatroomVC: UIViewController, UIImagePickerControllerDelegate, UINavigatio
 
         if textfield.text == "send file2" {
             let path = NSBundle.mainBundle().pathForResource("sampleFile2", ofType: "pdf")
-            self.chat.sendFileWithPath(path!, meta: ["name":"sampleFile2.pdf"]) { code, message in
-                if code != 200 {
-                    let alert = UIAlertController(title: "Info", message: message as? String, preferredStyle: UIAlertControllerStyle.Alert)
+            self.chat.sendFileWithPath(path!, meta: ["name":"sampleFile2.pdf"]) { error, message in
+                if error != nil {
+                    let alert = UIAlertController(title: "Info", message: error!.localizedDescription as? String, preferredStyle: UIAlertControllerStyle.Alert)
                     self.presentViewController(alert, animated: true, completion: nil)
                 } else {
-                    NSLog("file message 2 sent")
+                    NSLog("file message #\(message.id) sent")
                 }
             }
             textfield.text? = ""
             return
         }
         
-        self.chat.sendText(self.textfield.text!) { code, message in
-            if code != 200 {
-                let alert = UIAlertController(title: "Info", message: message as? String, preferredStyle: UIAlertControllerStyle.Alert)
+        self.chat.sendText(self.textfield.text!) { error, message in
+            if error != nil {
+                let alert = UIAlertController(title: "Info", message: error!.localizedDescription as? String, preferredStyle: UIAlertControllerStyle.Alert)
                 self.presentViewController(alert, animated: true, completion: nil)
             } else {
-                NSLog("text message sent")
+                NSLog("message #\(message.id) sent")
             }
         }
         textfield.text? = ""
@@ -105,13 +101,13 @@ class ChatroomVC: UIViewController, UIImagePickerControllerDelegate, UINavigatio
             picker.dismissViewControllerAnimated(true, completion: {
                 () -> Void in
             })
-            self.chat.sendImage(image) { code, message in
-                if code != 200 {
-                    let alert = UIAlertController(title: "Info", message: message as? String, preferredStyle: .Alert)
+            self.chat.sendImage(image) { error, message in
+                if error != nil {
+                    let alert = UIAlertController(title: "Info", message: error!.localizedDescription as? String, preferredStyle: .Alert)
                     alert.addAction(UIAlertAction(title: "OK", style: .Default, handler: nil))
                     self.presentViewController(alert, animated: true, completion: nil)
                 } else {
-                    NSLog("image message sent")
+                    NSLog("image message #\(message.id) sent")
                 }
             }
             
@@ -155,10 +151,9 @@ class ChatroomVC: UIViewController, UIImagePickerControllerDelegate, UINavigatio
         tableView.allowsSelection = false
         NSLog("Chat is \(chat)")
         
-        self.chat.listMessagesBefore() { code, messages in
-            NSLog("Exited, \(messages)")
-            if code != 200 {
-                NSLog("Failed to list messages")
+        self.chat.listMessagesBefore() { error, messages in
+            if error != nil {
+                NSLog("Failed to list messages: \(error!.localizedDescription)")
                 return
             }
             self.messages = messages as! [DUMessage]
