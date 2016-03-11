@@ -15,10 +15,11 @@ class ChooserUserVC: UIViewController {
     @IBOutlet var joinButton: UIBarButtonItem!
     
     private var doJoinRoom: Bool = false
+    /* XXX: We build a static user list for demo; you should use your own way to find other users' serials */
     private let userDict: NSDictionary = [
-        "demouser1":"demouser1",
-        "demouser2":"demouser2",
-        "demouser3":"demouser3"]
+        "demouser1":"YOUR_USER_SERIAL_1",
+        "demouser2":"YOUR_USER_SERIAL_2",
+        "demouser3":"YOUR_USER_SERIAL_3"]
     private var filteredDict: NSMutableDictionary?
     /* XXX: 10 is a demo chat id, you should replace with your id */
     private let roomDict: [String:Int] = ["join me":10]

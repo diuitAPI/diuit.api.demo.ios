@@ -14,13 +14,13 @@ Install the framework via Cocoapods by executing command: `pod install`
 ```swift
 import DUMessaging
 
-DUMessaging.loginWithAuthToken(${SESSION_TOKEN}) { code, result in
-	if code != 200 {
-		//deal with error
+DUMessaging.loginWithAuthToken(${SESSION_TOKEN}) { error, result in
+	if error != nil {
+		// Handle error
 		return
 	}
 	
-	//do something, such as listing chatrooms
+	//Do something, such as listing chatrooms
 }
 ```
 * In this example, there is an ActionSheet to let user choose one account to login. All you have to do is to replace ${SESSION_TOKEN_#} with your tokens.
@@ -28,26 +28,36 @@ DUMessaging.loginWithAuthToken(${SESSION_TOKEN}) { code, result in
 * After login, get a chatroom instance (DUChat), then you can send all kinds of message, kick some one out, etc.
 * If you don't have any chatroom, create one by:
 ```swift
-DUMessaging.createChatroomWith([${USER_SERIALS}]) { code, chat in
-	// do something
+DUMessaging.createChatroomWith([${USER_SERIALS}]) { error, chat in
+    if error != nil {
+		// Handle error
+		return
+	}
+	// Do something
 }
 ```
 * Or join other chatroom by : (you have to know the chatroom id first)
 ```swift
-DUMessaging.joinChatroomWithId(${CHAT_ID}) {code, chat in
-	// do something
+DUMessaging.joinChatroomWithId(${CHAT_ID}) {error, chat in
+    if error != nil {
+		// Handle error
+		return
+	}
+	// Do something
 }
 ```
 * Sending messages are very very easy:
 ```swift
-chat.sendText("Chimichanga!") { code, message in
-	if code != 200 {
-	    // handle error
+chat.sendText("Chimichanga!") { error, message in
+	if error != nil {
+	    // Handle error
+	    return
 	}
+	// Do something if you want
 	
 }
 ```
-* If you don't want deal with callback, things could be even easier!
+* If you don't want to deal with callback, do as following.
 ```swift
 chat.sendText("Hi, this is a message without meta and callback")
 ```

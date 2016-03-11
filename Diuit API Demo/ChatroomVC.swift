@@ -45,10 +45,10 @@ class ChatroomVC: UIViewController, UIImagePickerControllerDelegate, UINavigatio
             let path = NSBundle.mainBundle().pathForResource("sampleFile1", ofType: "pdf")
             self.chat.sendFileWithPath(path!, meta: ["name":"sampleFile1.pdf"]) { error, message in
                 if error != nil {
-                    let alert = UIAlertController(title: "Info", message: error!.localizedDescription as? String, preferredStyle: UIAlertControllerStyle.Alert)
+                    let alert = UIAlertController(title: "Info", message: error!.localizedDescription, preferredStyle: UIAlertControllerStyle.Alert)
                     self.presentViewController(alert, animated: true, completion: nil)
                 } else {
-                    NSLog("file message #\(message.id) sent")
+                    NSLog("file message #\(message!.id) sent")
                 }
             }
             textfield.text? = ""
@@ -59,10 +59,10 @@ class ChatroomVC: UIViewController, UIImagePickerControllerDelegate, UINavigatio
             let path = NSBundle.mainBundle().pathForResource("sampleFile2", ofType: "pdf")
             self.chat.sendFileWithPath(path!, meta: ["name":"sampleFile2.pdf"]) { error, message in
                 if error != nil {
-                    let alert = UIAlertController(title: "Info", message: error!.localizedDescription as? String, preferredStyle: UIAlertControllerStyle.Alert)
+                    let alert = UIAlertController(title: "Info", message: error!.localizedDescription, preferredStyle: UIAlertControllerStyle.Alert)
                     self.presentViewController(alert, animated: true, completion: nil)
                 } else {
-                    NSLog("file message #\(message.id) sent")
+                    NSLog("file message #\(message!.id) sent")
                 }
             }
             textfield.text? = ""
@@ -71,10 +71,10 @@ class ChatroomVC: UIViewController, UIImagePickerControllerDelegate, UINavigatio
         
         self.chat.sendText(self.textfield.text!) { error, message in
             if error != nil {
-                let alert = UIAlertController(title: "Info", message: error!.localizedDescription as? String, preferredStyle: UIAlertControllerStyle.Alert)
+                let alert = UIAlertController(title: "Info", message: error!.localizedDescription, preferredStyle: UIAlertControllerStyle.Alert)
                 self.presentViewController(alert, animated: true, completion: nil)
             } else {
-                NSLog("message #\(message.id) sent")
+                NSLog("message #\(message!.id) sent")
             }
         }
         textfield.text? = ""
@@ -103,11 +103,11 @@ class ChatroomVC: UIViewController, UIImagePickerControllerDelegate, UINavigatio
             })
             self.chat.sendImage(image) { error, message in
                 if error != nil {
-                    let alert = UIAlertController(title: "Info", message: error!.localizedDescription as? String, preferredStyle: .Alert)
+                    let alert = UIAlertController(title: "Info", message: error!.localizedDescription, preferredStyle: .Alert)
                     alert.addAction(UIAlertAction(title: "OK", style: .Default, handler: nil))
                     self.presentViewController(alert, animated: true, completion: nil)
                 } else {
-                    NSLog("image message #\(message.id) sent")
+                    NSLog("image message #\(message!.id) sent")
                 }
             }
             
@@ -175,7 +175,7 @@ extension ChatroomVC: UITableViewDataSource {
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let isRightCell:Bool
+        let isRightCell: Bool
         let c: UITableViewCell!
         let message = messages[indexPath.row]
         if message.senderUser?.serial == DUMessaging.currentUser!.serial {
@@ -203,14 +203,8 @@ extension ChatroomVC: UITableViewDataSource {
         avatarImageView.backgroundColor = UIColor.grayColor()
         avatarImageView.layer.cornerRadius = avatarImageView.bounds.size.width/2
         avatarImageView.clipsToBounds = true;
-        if message.senderUser?.serial == "demouser1" {
-            avatarImageView.image = UIImage(named: "avatar1")
-        } else if message.senderUser?.serial == "demouser2" {
-            avatarImageView.image = UIImage(named: "avatar2")
-        } else {
-            avatarImageView.image = UIImage(named: "avatar3")
-        }
-        //avatarImageView.image = (isRightCell) ? UIImage(named: "avatar1") : UIImage(named: "avatar2")
+        /* XXX: this is just for demo */
+        avatarImageView.image = (isRightCell) ? UIImage(named: "avatar1") : UIImage(named: "avatar2")
         
         let bubbleTextLabel = c.viewWithTag(2) as? TTTAttributedLabel
         

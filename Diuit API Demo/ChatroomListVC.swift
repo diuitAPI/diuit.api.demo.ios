@@ -22,7 +22,7 @@ class ChatroomListVC: UIViewController {
         NSNotificationCenter.defaultCenter().addObserverForName("messageReceived", object: nil, queue: NSOperationQueue.mainQueue()) { notif in
             let message = notif.userInfo!["message"] as! DUMessage
             NSLog("Got new message #\(message.id):\n\(message.data)")
-            DUMessaging.listChatroomsOnCompletion() { error, chats in
+            DUMessaging.listChatrooms() { error, chats in
                 if error != nil {
                     NSLog("list chat room errored:\(error!.localizedDescription)")
                     return
@@ -44,7 +44,7 @@ class ChatroomListVC: UIViewController {
             }
             self.registerMessageObserver()
 
-            DUMessaging.listChatroomsOnCompletion() { error, chats in
+            DUMessaging.listChatrooms() { error, chats in
                 if error != nil {
                     NSLog("list chat room errored:\(error!.localizedDescription)")
                     return
@@ -69,39 +69,14 @@ class ChatroomListVC: UIViewController {
 
         let alert = UIAlertController(title: "Login", message: "Which user do you wish to login as?", preferredStyle: .ActionSheet);
         alert.addAction(UIAlertAction(title: "demouser1", style: .Default) { action in
-            self.loginWithAuthToken("DemoDev1")
+            self.loginWithAuthToken("YOUR_SESSION_TOKEN_1")
             })
         alert.addAction(UIAlertAction(title: "demouser2", style: .Default) { action in
-            self.loginWithAuthToken("DemoDev2")
+            self.loginWithAuthToken("YOUR_SESSION_TOKEN_2")
             })
         alert.addAction(UIAlertAction(title: "demouser3", style: .Default) { action in
-            self.loginWithAuthToken("DemoDev3")
+            self.loginWithAuthToken("YOUR_SESSION_TOKEN_3")
             })
-        /*
-        alert.addAction(UIAlertAction(title: "User1", style: .Default) { action in
-            self.loginWithAuthToken("asdf")
-        })
-        alert.addAction(UIAlertAction(title: "User2", style: .Default) { action in
-            self.loginWithAuthToken("qwer")
-        })
-
-        alert.addAction(UIAlertAction(title: "BEN", style: .Default) { action in
-            self.loginWithAuthToken("ben_01")
-        })
-        alert.addAction(UIAlertAction(title: "CHRIS", style: .Default) { action in
-            self.loginWithAuthToken("chris_02")
-        })
-        alert.addAction(UIAlertAction(title: "MIRU", style: .Default) { action in
-            self.loginWithAuthToken("miru_03")
-        })
-        alert.addAction(UIAlertAction(title: "POFAT", style: .Default) { action in
-            self.loginWithAuthToken("pofat_04")
-        })
-        alert.addAction(UIAlertAction(title: "MOMO", style: .Default) { action in
-            self.loginWithAuthToken("momo_05")
-        })
-*/
-
 
         presentViewController(alert, animated: true, completion: nil);
     }
@@ -110,7 +85,7 @@ class ChatroomListVC: UIViewController {
         super.viewWillAppear(animated)
         if DUMessaging.currentUser != nil {
             self.registerMessageObserver()
-            DUMessaging.listChatroomsOnCompletion() { error, chats in
+            DUMessaging.listChatrooms() { error, chats in
                 if error != nil {
                     NSLog("list chat room errored:\(error!.localizedDescription)")
                     return
